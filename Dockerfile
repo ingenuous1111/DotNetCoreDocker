@@ -2,9 +2,6 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 443
-
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["DockeroDummy.csproj", "."]
@@ -14,7 +11,7 @@ WORKDIR "/src/."
 RUN dotnet build "DockeroDummy.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DockeroDummy.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN -p dotnet publish "DockeroDummy.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
@@ -35,6 +32,7 @@ ENV OTEL_DOTNET_AUTO_HOME=/otel
 RUN /bin/bash /otel/otel-dotnet-install.sh
 
 RUN chmod +x /otel/instrument.sh
+EXPOSE 8080
 
 #ENTRYPOINT ["dotnet", "DockeroDummy.dll"]
 ENTRYPOINT ["/bin/bash", "-c", "source /otel/instrument.sh && dotnet DockeroDummy.dll"]
