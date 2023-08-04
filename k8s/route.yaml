@@ -11,4 +11,5 @@ spec:
     kind: Service
     name: dot-net
     weight: 100
+    Path: api/employee/getemployeelist
   
