@@ -32,7 +32,7 @@ ENV OTEL_DOTNET_AUTO_HOME=/otel
 RUN /bin/bash /otel/otel-dotnet-install.sh
 
 RUN chmod +x /otel/instrument.sh
-EXPOSE 8080
+EXPOSE 80
 
 #ENTRYPOINT ["dotnet", "DockeroDummy.dll"]
 ENTRYPOINT ["/bin/bash", "-c", "source /otel/instrument.sh && dotnet DockeroDummy.dll"]
