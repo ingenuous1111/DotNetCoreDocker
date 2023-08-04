@@ -42,8 +42,16 @@ app.MapControllers();
 
 app.Run();
 
-public static class DiagnosticsConfig
-{
-    public const string ServiceName = "MyService";
-    public static ActivitySource ActivitySource = new ActivitySource(ServiceName);
-}
+// public static class DiagnosticsConfig
+// {
+//     public const string ServiceName = "MyService";
+//     public static ActivitySource ActivitySource = new ActivitySource(ServiceName);
+// }
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+            webBuilder.UseUrls("http://*:5000"); // Change the port to 5000
+        });
+
