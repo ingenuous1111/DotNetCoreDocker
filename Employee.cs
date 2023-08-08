@@ -1,6 +1,6 @@
 ﻿namespace DockeroDummy
 {
-    public cla EmployeeModel
+    public class EmployeeModel
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
@@ -11,7 +11,7 @@
         {
             List<EmployeeModel> employees = new()
             {
-                new EmployeeModel { EmployeeId = 1,EmployeeName ="A"     }  ,
+                new EmployeeModel { EmployeeId = 1,EmployeeName ="A"       ,
                 new EmployeeModel { EmployeeId = 2,EmployeeName ="B"},
                 new EmployeeModel { EmployeeId = 3,EmployeeName ="C"},
                 new EmployeeModel { EmployeeId = 4,EmployeeName ="D"},
