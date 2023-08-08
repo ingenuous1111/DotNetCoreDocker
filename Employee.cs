@@ -1,6 +1,6 @@
 ﻿namespace DockeroDummy
 {
-    public class EmployeeModel
+    public cla EmployeeModel
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
