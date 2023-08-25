@@ -2,8 +2,8 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: dot-net
-  name: dot-net
+    app: {{.Values.route.name}}
+  name: {{.Values.route.appname}}
 spec:
   port:
     targetPort: 8080-tcp
