@@ -6,9 +6,9 @@ metadata:
   name: {{.Values.route.appname}}
 spec:
   port:
-    targetPort: 8080-tcp
+    targetPort: {{.Values.route.port}}
   to:
     kind: Service
-    name: dot-net
+    name: {{.Values.route.appname}}
     weight: 100
     Path: /api/employee/getemployeelist
