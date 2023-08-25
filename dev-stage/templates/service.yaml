@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: dot-net
-  name: dot-net
+    app: {{.Values.service.name}}
+  name: {{.Values.service.appname}}
 spec:
   type: ClusterIP
   ports:
     - name: 8080-tcp
-      port: 8080
-      targetPort: 8080
+      port: {{.Values.service.port}}
+      targetPort: {{.Values.service.port}}
       protocol: TCP
   selector:
-    app: dot-net
+    app: {{.Values.service.name}}
