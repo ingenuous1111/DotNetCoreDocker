@@ -2,21 +2,21 @@
 
 # Replace with your desired values
 deployment:
- appname: fire-boltapp
- projectname: chanu
- name: chanu
+ appname: dot-net
+ projectname: rohanp
+ name: dot-net
  tag: 3
  port: 8080
- imagename: docker.io/rockettcs/chanu:4
+ imagename: quay.io/rohanp/dotnet:latest
 
 
 service:
   port: 8080
-  name: chanu
-  projectname: chanu
-  appname: fire-boltapp
+  name: dot-net
+  projectname: rohanp
+  appname: dot-net
 
 route:
- appname: chanu
- project: chanu
+ appname: dot-net
+ project: rohanp
  port: 8080
