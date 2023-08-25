@@ -19,4 +19,4 @@ service:
 route:
  appname: dot-net
  project: rohanp
- port: 8080-tcp
+ port: 8080
