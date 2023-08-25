@@ -11,4 +11,4 @@ spec:
     kind: Service
     name: {{.Values.route.appname}}
     weight: 100
-    Path: /api/employee/getemployeelist
+  path: /api/employee/getemployeelist
