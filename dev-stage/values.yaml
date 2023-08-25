@@ -1,0 +1,22 @@
+# values.yaml
+
+# Replace with your desired values
+deployment:
+ appname: fire-boltapp
+ projectname: chanu
+ name: chanu
+ tag: 3
+ port: 8080
+ imagename: docker.io/rockettcs/chanu:4
+
+
+service:
+  port: 8080
+  name: chanu
+  projectname: chanu
+  appname: fire-boltapp
+
+route:
+ appname: chanu
+ project: chanu
+ port: 8080
