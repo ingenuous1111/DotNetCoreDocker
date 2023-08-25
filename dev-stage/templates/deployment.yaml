@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: dot-net
-  name: dot-net
+    app: {{.Values.deployment.name}}
+  name: {{.Values.deployment.appname}}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dot-net
+      app: {{.Values.deployment.name}}
   template:
     metadata:
       labels:
-        app: dot-net
+        app: {{.Values.deployment.name}}
     spec:
       containers:
-        - image: quay.io/monishkumar/dotnet-ocp:latest
+        - image: {{.Values.deployment.imagename}}
           imagePullPolicy: Always
-          name: dot-net
+          name: {{.Values.deployment.appname}}
           ports:
-            - containerPort: 8080
+            - containerPort: {{.Values.deployment.port}}
               protocol: TCP
