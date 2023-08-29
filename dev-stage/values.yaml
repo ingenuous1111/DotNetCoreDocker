@@ -3,7 +3,7 @@
 # Replace with your desired values
 deployment:
  appname: dot-net
- projectname: rohanp
+ projectname: rohan
  name: dot-net
  tag: 3
  port: 8080
@@ -13,10 +13,10 @@ deployment:
 service:
   port: 8080
   name: dot-net
-  projectname: rohanp
+  projectname: rohan
   appname: dot-net
 
 route:
  appname: dot-net
- project: rohanp
+ project: rohan
  port: 8080-tcp
