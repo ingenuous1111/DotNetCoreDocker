@@ -7,7 +7,7 @@ deployment:
  name: dot-net
  tag: 3
  port: 8080
- imagename: quay.io/rohanp/dotnet:86789fdf1c84541b4a4002e8fc39fb77fd885f64
+ imagename: quay.io/rohanp/dotnet:a6212b98b65d03b03789d436eae71bab848134d8
 
 
 service:
